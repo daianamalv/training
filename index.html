@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+  <title>Document</title>
+  <script src="jquery.js" charset="utf-8"></script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&subset=cyrillic');
+
+body {
+  min-height: 100%;
+  background-color: grey;
+ 	text-align: center;
+	margin: 0;
+	padding: 0;
+  }
+
+.theatre {
+	background-image: url(theatre.png);
+	height: 230px;
+	width: 700px;
+	margin: 0 auto;
+	margin-top: 30px;
+	}
+
+.message {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin: 0 auto;
+	font-size: 70px;
+	color:#000;
+	}
+
+.message:hover {
+	cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+		let i = 0;
+		let quotes = [
+			"ЛУЧШЕ ЖИЗНИ",
+			"КОТОРЫЙ ЛЕЧИТ",
+			"ИЗМЕНИТ ЖИЗНЬ",
+			"ГДЕ МОЖНО ЖИТЬ",
+			"ИСКУССТВО ОТРАЖАТЬ",
+			"ПАНТЕОН",
+			"IS PUNK",
+			"-<br>ВЕСЬ МИР",
+			"НАЧИНАЕТСЯ<br>НЕ С ВЕШАЛКИ",
+			"НУЖЕН ТЕБЕ"
+		];
+
+		$(function () {
+
+			$('.panel-text').click(function () {
+				i = Math.floor(Math.random() * quotes.length)
+				showText(this, quotes[i]);
+			});
+		;
+
+			function showText(panel, text) {
+
+				var panel = $(panel);
+				var point = $('.message', panel);
+				panel.fadeOut(500, function () {
+					point.html(text);
+					panel.fadeIn(500);
+				});
+			}
+		});
+
+	</script>
+	<div class="theatre"></div>
+			<div class="panel-text">
+				<div class="message">
+					ТРАНСФОРМ
+				</div>
+			</div>
+  </body>
+  </html>
